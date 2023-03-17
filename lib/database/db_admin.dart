@@ -10,8 +10,8 @@ class DBAdmin{
     // openDataBase, es para abrir nuestra base de datos, recibe el path, la versión de nuestra base de datos, y onCreate, se ejecuta cuando se crea una nueva base de datos. En esta función se pueden crear las tablas y establecer los índices necesarios para la base de datos.
   Database? _myDatabase;
 
+  // Singleton
   static final DBAdmin _instance = DBAdmin._();
-  
   DBAdmin._();
   factory DBAdmin() {
     return _instance;

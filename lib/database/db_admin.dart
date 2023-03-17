@@ -67,11 +67,23 @@ class DBAdmin{
   Future<int> updateBook(BookModel model) async {
     Database? db = await _checkDatabase();
     int value = await db!.update(
-      "Book",
+      "BOOK",
       model.toJson(),
       where: "id = ${model.id}",
     );
     return value;
   }
 
+
+  // 4. DELETE
+
+  Future<int> deleteBook(int idBook) async {
+    Database? db = await _checkDatabase();
+    int value = await db!.delete(
+      "Book",
+      where: "id = $idBook",
+    );
+    return value;
+  }
+  
 }

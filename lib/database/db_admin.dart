@@ -41,5 +41,10 @@ class DBAdmin{
   
   getBooks() async {
     Database? db = await _checkDatabase();
+    List<Map<String, dynamic>> data = await db!.query(
+      "Book",
+      orderBy: "id DESC",
+    );
+    // List<> books = data.map((e) => .fromJson(e)).toList();
   }
 }

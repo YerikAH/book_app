@@ -22,7 +22,7 @@ class HomeScreen extends StatelessWidget {
               height: pyth * 0.42,
               decoration: const BoxDecoration(
                 image: DecorationImage(
-                  image: NetworkImage("")
+                  image: NetworkImage("https://images.pexels.com/photos/14454202/pexels-photo-14454202.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
                 )
               ),
               child: SafeArea(
@@ -69,6 +69,21 @@ class HomeScreen extends StatelessWidget {
                             borderSide: BorderSide.none,
                           ),
                         ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(22.0),
+                      child: Row(
+                        children: const [
+                          Text(
+                            "Guarda \ntus libros \nfavoritos.",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 36.0,
+                              fontWeight: FontWeight.w900,
+                            ),
+                          ),
+                        ],
                       ),
                     )
                   ],

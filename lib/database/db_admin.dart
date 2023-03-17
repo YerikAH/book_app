@@ -44,7 +44,7 @@ class DBAdmin{
   getBooks() async {
     Database? db = await _checkDatabase();
     List<Map<String, dynamic>> data = await db!.query(
-      "Book",
+      "BOOK",
       orderBy: "id DESC",
     );
     List<BookModel> books = data.map((e) => BookModel.fromJson(e)).toList();
@@ -61,4 +61,17 @@ class DBAdmin{
     );
     return value;
   }
+
+  // 3. UPDATE
+
+  Future<int> updateBook(BookModel model) async {
+    Database? db = await _checkDatabase();
+    int value = await db!.update(
+      "Book",
+      model.toJson(),
+      where: "id = ${model.id}",
+    );
+    return value;
+  }
+
 }

@@ -14,8 +14,7 @@ class HomeScreen extends StatelessWidget {
           children: [
             ElevatedButton(
               onPressed: (){
-                  DBAdmin admin = DBAdmin();
-                  admin.initDataBase();
+                
               },
               child: const Text("Database"),
             )

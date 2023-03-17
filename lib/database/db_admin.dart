@@ -8,7 +8,23 @@ class DBAdmin{
     // Con join, unimos path, en este caso creamos un archivo DBBooks.db
     // Ya no es necesario poner CREATE DATABASE, ya que se crea cuando creamos el archivo
     // openDataBase, es para abrir nuestra base de datos, recibe el path, la versión de nuestra base de datos, y onCreate, se ejecuta cuando se crea una nueva base de datos. En esta función se pueden crear las tablas y establecer los índices necesarios para la base de datos.
-  initDataBase() async {
+  Database? _myDatabase;
+
+  static final DBAdmin _instance = DBAdmin._();
+  
+  DBAdmin._();
+  factory DBAdmin() {
+    return _instance;
+  }
+
+  Future<Database?> _checkDatabase() async {
+    if (_myDatabase == null) {
+      _myDatabase = await _initDataBase();
+    }
+    return _myDatabase;
+  }
+
+  Future<Database> _initDataBase() async {
     Directory directory = await getApplicationDocumentsDirectory();
     String pathDataBase = join(directory.path, "DBBooks.db");
     return await openDatabase(
@@ -20,5 +36,10 @@ class DBAdmin{
         );
       }
     );
+  }
+  // CRUD
+  
+  getBooks() async {
+    Database? db = await _checkDatabase();
   }
 }

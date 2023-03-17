@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:app_book/model/model.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
@@ -39,12 +40,25 @@ class DBAdmin{
   }
   // CRUD
   
+  // 1. READ
   getBooks() async {
     Database? db = await _checkDatabase();
     List<Map<String, dynamic>> data = await db!.query(
       "Book",
       orderBy: "id DESC",
     );
-    // List<> books = data.map((e) => .fromJson(e)).toList();
+    List<BookModel> books = data.map((e) => BookModel.fromJson(e)).toList();
+    return books;
+  }
+
+  // 2. CREATE
+
+  Future<int> insertBook(BookModel model) async {
+    Database? db = await _checkDatabase();
+    int value = await db!.insert(
+      "BOOK",
+      model.toJson(),
+    );
+    return value;
   }
 }

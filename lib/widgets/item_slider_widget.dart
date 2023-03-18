@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:app_book/model/model.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ItemSliderWidget extends StatelessWidget {
   BookModel book;
@@ -37,7 +38,7 @@ class ItemSliderWidget extends StatelessWidget {
             height: pyth * 0.19,
             decoration: BoxDecoration(
               color: colors[index],
-              borderRadius: BorderRadius.circular(12.0),
+              borderRadius: BorderRadius.circular(20.0),
             ),
             child: Stack(
               clipBehavior: Clip.none,
@@ -49,7 +50,7 @@ class ItemSliderWidget extends StatelessWidget {
                     height: pyth * 0.195,
                     width: pyth * 0.14,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12.0),
+                      borderRadius: BorderRadius.circular(20.0),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.black.withOpacity(0.35),
@@ -76,7 +77,7 @@ class ItemSliderWidget extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                   maxLines: 2,
                   textAlign: TextAlign.center,
-                  style: const TextStyle(
+                  style: GoogleFonts.poppins(
                     fontSize: 16.0,
                     fontWeight: FontWeight.w600,
                     height: 1.0,
@@ -89,10 +90,10 @@ class ItemSliderWidget extends StatelessWidget {
                   book.author,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
+                  style: GoogleFonts.poppins(
                     fontSize: 14.0,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.black.withOpacity(0.65),
+                    fontWeight: FontWeight.w400,
+                    color: Colors.black38,
                     height: 1.0,
                   ),
                 ),

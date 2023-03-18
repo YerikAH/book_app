@@ -238,8 +238,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         Text(
                           "My favorite books",
                           style: GoogleFonts.poppins(
-                            fontSize: 20.0,
+                            fontSize: 18.0,
                             fontWeight: FontWeight.w600,
+                            letterSpacing: 0.5
                           ),
                         ),
                         const SizedBox(
@@ -259,15 +260,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         const SizedBox(
                           height: 20.0,
                         ),
-                        const Text(
-                          "Lista general",
-                          style: TextStyle(
-                            fontSize: 20.0,
+                        Text(
+                          "Overall list",
+                          style: GoogleFonts.poppins(
+                            fontSize: 18.0,
                             fontWeight: FontWeight.w600,
+                            letterSpacing: 0.5
                           ),
-                        ),
-                        const SizedBox(
-                          height: 20.0,
                         ),
                         ListView.builder(
                           itemCount: myBooks.length,

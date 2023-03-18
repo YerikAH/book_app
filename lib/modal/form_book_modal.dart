@@ -156,37 +156,38 @@ class _FormBookModalState extends State<FormBookModal> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              SizedBox(height: 20.0,),
-              Text(
-                widget.isRegister ? "Add book" : "Update book",
-                style: GoogleFonts.poppins(
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.w600,
-                  letterSpacing: 0.5
+              Container(
+                margin: const EdgeInsets.symmetric(vertical: 20.0),
+                child: Text(
+                  widget.isRegister ? "Add book" : "Update book",
+                  style: GoogleFonts.poppins(
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.w600,
+                    letterSpacing: 0.5
+                  ),
                 ),
               ),
-              SizedBox(height: 20.0,),
               CommonTextFieldWidget(
                 hintText: "Enter the title",
-                icon: Icons.rocket,
+                icon: Icons.rocket_launch_rounded,
                 label: "Title",
                 controller: _titleController,
               ),
               CommonTextFieldWidget(
                 hintText: "Enter name the autor",
-                icon: Icons.person,
+                icon: Icons.person_rounded,
                 label: "Autor",
                 controller: _authorController,
               ),
               CommonTextFieldWidget(
                 hintText: "Enter front page url",
-                icon: Icons.image,
+                icon: Icons.image_rounded,
                 label: "Front page",
                 controller: _imageController,
               ),
               CommonTextFieldWidget(
                 hintText: "Enter description",
-                icon: Icons.view_headline,
+                icon: Icons.view_headline_rounded,
                 label: "Description",
                 maxLines: 1,
                 controller: _descriptionController,

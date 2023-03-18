@@ -1,5 +1,6 @@
 import 'package:app_book/database/db_admin.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../model/model.dart';
 import '../widgets/widgets.dart';
@@ -155,36 +156,39 @@ class _FormBookModalState extends State<FormBookModal> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
+              SizedBox(height: 20.0,),
               Text(
-                widget.isRegister ? "Agregar libro" : "Actualizar libro",
-                style: const TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.w700,
+                widget.isRegister ? "Add book" : "Update book",
+                style: GoogleFonts.poppins(
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.w600,
+                  letterSpacing: 0.5
                 ),
               ),
+              SizedBox(height: 20.0,),
               CommonTextFieldWidget(
-                hintText: "Ingresa un título",
+                hintText: "Enter the title",
                 icon: Icons.rocket,
-                label: "Título",
+                label: "Title",
                 controller: _titleController,
               ),
               CommonTextFieldWidget(
-                hintText: "Ingresa un autor",
+                hintText: "Enter name the autor",
                 icon: Icons.person,
                 label: "Autor",
                 controller: _authorController,
               ),
               CommonTextFieldWidget(
-                hintText: "Ingresa el url de la portada",
+                hintText: "Enter front page url",
                 icon: Icons.image,
-                label: "Portada",
+                label: "Front page",
                 controller: _imageController,
               ),
               CommonTextFieldWidget(
-                hintText: "Ingresa una descripción",
+                hintText: "Enter description",
                 icon: Icons.view_headline,
-                label: "Descripción",
-                maxLines: 4,
+                label: "Description",
+                maxLines: 1,
                 controller: _descriptionController,
               ),
               const SizedBox(
@@ -198,16 +202,17 @@ class _FormBookModalState extends State<FormBookModal> {
                     saveBook();
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xff22223b),
+                    backgroundColor: const Color.fromARGB(179, 255, 80, 27),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(14.0),
                     ),
                   ),
                   child: Text(
-                    widget.isRegister ? "Agregar" : "Actualizar",
-                    style: const TextStyle(
+                    widget.isRegister ? "Add" : "Update",
+                    style: GoogleFonts.poppins(
                       fontSize: 16.0,
                       fontWeight: FontWeight.w600,
+                      color: Colors.white
                     ),
                   ),
                 ),

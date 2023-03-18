@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CommonTextFieldWidget extends StatelessWidget {
   String label;
@@ -24,9 +25,14 @@ class CommonTextFieldWidget extends StatelessWidget {
         children: [
           Text(
             " $label:",
+            style: GoogleFonts.poppins(
+              fontSize: 14.0,
+              color: Colors.black,
+              fontWeight: FontWeight.w500
+            ),
           ),
           const SizedBox(
-            height: 5.0,
+            height: 10.0,
           ),
           Container(
             decoration: BoxDecoration(
@@ -41,6 +47,11 @@ class CommonTextFieldWidget extends StatelessWidget {
             child: TextFormField(
               controller: controller,
               maxLines: maxLines,
+              style: GoogleFonts.poppins(
+                color: Colors.black87,
+                fontSize: 13.0,
+                fontWeight: FontWeight.w400
+              ),
               decoration: InputDecoration(
                 hintText: hintText,
                 filled: true,

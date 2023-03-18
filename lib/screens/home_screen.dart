@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:app_book/database/db_admin.dart';
 import 'package:app_book/model/model.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../modal/modal.dart';
 import '../widgets/widgets.dart';
@@ -121,31 +122,23 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return  Scaffold(
       floatingActionButton: InkWell(
+        highlightColor: Colors.transparent,
+        splashColor: Colors.transparent,
         onTap: () {
           isRegister = true;
           showFormBook();
         },
         child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8.0),
+          padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
           decoration: BoxDecoration(
-            color: const Color(0xff22223b),
-            borderRadius: BorderRadius.circular(14.0),
+            color: const Color.fromARGB(179, 255, 80, 27),
+            borderRadius: BorderRadius.circular(255.0),
           ),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: const [
-              Icon(
-                Icons.add,
-                color: Colors.white,
-              ),
-              Text(
-                "Add",
-                style: TextStyle(
-                  fontSize: 18.0,
-                  color: Colors.white,
-                ),
-              ),
-            ],
+          child: const Icon(
+            Icons.add_rounded,
+            color: Colors.white,
+            size: 30.0,
+            
           ),
         ),
       ),
@@ -158,12 +151,14 @@ class _HomeScreenState extends State<HomeScreen> {
               height: pyth * 0.42,
               decoration: const BoxDecoration(
                 image: DecorationImage(
-                  image: NetworkImage("https://images.pexels.com/photos/14454202/pexels-photo-14454202.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
+                  image: NetworkImage("https://images.pexels.com/photos/2460817/pexels-photo-2460817.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
                   fit: BoxFit.cover
                 )
               ),
               child: SafeArea(
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
                       width: pyth * 0.35,
@@ -211,14 +206,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     Padding(
                       padding: const EdgeInsets.all(22.0),
                       child: Row(
-                        children: const [
+                        children: [
                           Text(
                             "Save \nyou'r favorite \n books.",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 36.0,
-                              fontWeight: FontWeight.w900,
-                            ),
+                            style: GoogleFonts.poppins(
+                              fontSize: 32.0,
+                              fontWeight: FontWeight.w700,
+                              color: Colors.white
+                            )
                           ),
                         ],
                       ),
@@ -240,9 +235,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         const SizedBox(
                           height: 8.0,
                         ),
-                        const Text(
-                          "Mis libros favoritos",
-                          style: TextStyle(
+                        Text(
+                          "My favorite books",
+                          style: GoogleFonts.poppins(
                             fontSize: 20.0,
                             fontWeight: FontWeight.w600,
                           ),
@@ -302,18 +297,40 @@ class _HomeScreenState extends State<HomeScreen> {
                   )
                   : Center(
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 50.0),
+                      padding: const EdgeInsets.symmetric(vertical: 75.0, horizontal: 20.0),
                       child: Column(
+                        
                         children: [
-                          Image.asset(
-                            "assets/box.png",
+                          Container(
+                            width: pyth * 0.1,
+                            padding: const EdgeInsets.all(15.0),
                             height: pyth * 0.1,
+                            decoration: BoxDecoration(
+                              color: const Color.fromARGB(179, 255, 80, 27),
+                              borderRadius: BorderRadius.circular(255.0)
+                            ),
+                            child: Center(
+                              child: Container(
+                                decoration: const BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage("assets/box.png")
+                                  )
+                                ),
+                              ),
+                            ),
                           ),
                           const SizedBox(
-                            height: 8.0,
+                            height: 10.0,
                           ),
-                          const Text(
-                              "Por favor registra tu primer libro.")
+                          Text(
+                            "Please register your first book.",
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.poppins(
+                              fontSize: 16.0,
+                              color: const Color.fromARGB(179, 255, 80, 27),
+                              fontWeight: FontWeight.w500,
+                            ),
+                          )
                         ],
                       ),
                     ),

@@ -1,4 +1,5 @@
 import 'package:app_book/screens/screens.dart';
+import 'package:app_book/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -9,10 +10,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'BookApp',
-      home: HomeScreen(),
+      theme: AppTheme.themeConfig,
+      home: const HomeScreen(),
     );
   }
 }

@@ -4,12 +4,115 @@ import 'package:app_book/database/db_admin.dart';
 import 'package:app_book/model/model.dart';
 import 'package:flutter/material.dart';
 
+import '../modal/modal.dart';
 import '../widgets/widgets.dart';
 
-class HomeScreen extends StatelessWidget {
-   
+class HomeScreen extends StatefulWidget { 
   const HomeScreen({Key? key}) : super(key: key);
-  
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  BookModel? booKTemp;
+  bool isRegister = true;
+
+  showFormBook() {
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: Colors.transparent,
+      isScrollControlled: true,
+      builder: (BuildContext context) {
+        return Padding(
+          padding: MediaQuery.of(context).viewInsets,
+          child: FormBookModal(
+            book: booKTemp,
+            isRegister: isRegister,
+          ),
+        );
+      },
+    ).then((value) {
+      setState(() {});
+    });
+  }
+
+  showDeleteDialog(int idBook) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16.0),
+          ),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Text("Attention"),
+              const SizedBox(
+                height: 8.0,
+              ),
+              const Text("Do you want to delete this book?"),
+              const SizedBox(
+                height: 12.0,
+              ),
+              Row(
+                children: [
+                  Expanded(
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: const Text(
+                        "Cancel",
+                        style: TextStyle(
+                          color: Colors.black54,
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 6.0,
+                  ),
+                  Expanded(
+                    child: ElevatedButton(
+                      onPressed: () {
+                        DBAdmin().deleteBook(idBook).then((value) {
+                          if (value >= 0) {
+                            Navigator.pop(context);
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                content: Text(
+                                  "The book was deleted successfully",
+                                ),
+                              ),
+                            );
+                            setState(() {});
+                            //SnackBar
+                          }
+                        });
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Color(0xff22223b),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(14.0),
+                        ),
+                      ),
+                      child: const Text(
+                        "Accept",
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -17,6 +120,36 @@ class HomeScreen extends StatelessWidget {
     double pyth = sqrt(pow(height, 2) + pow(width, 2));
 
     return  Scaffold(
+      floatingActionButton: InkWell(
+        onTap: () {
+          isRegister = true;
+          showFormBook();
+        },
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8.0),
+          decoration: BoxDecoration(
+            color: const Color(0xff22223b),
+            borderRadius: BorderRadius.circular(14.0),
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: const [
+              Icon(
+                Icons.add,
+                color: Colors.white,
+              ),
+              Text(
+                "Add",
+                style: TextStyle(
+                  fontSize: 18.0,
+                  color: Colors.white,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+
       body: SingleChildScrollView(
         child: Column(
           children: [

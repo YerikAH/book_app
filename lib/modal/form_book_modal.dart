@@ -104,7 +104,7 @@ class _FormBookModalState extends State<FormBookModal> {
             //Se agregó el libro correctamente
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
-                backgroundColor: Color(0xff06d6a0),
+                backgroundColor: const Color(0xff06d6a0),
                 duration: const Duration(seconds: 5),
                 behavior: SnackBarBehavior.floating,
                 // padding: EdgeInsets.all(12.0),

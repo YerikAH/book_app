@@ -93,7 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         });
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xff22223b),
+                        backgroundColor: const Color(0xff22223b),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(14.0),
                         ),
@@ -320,7 +320,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   );
                 }
-                return CircularProgressIndicator();
+                return const CircularProgressIndicator();
                },
             )
           ],

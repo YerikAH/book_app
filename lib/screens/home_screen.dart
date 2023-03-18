@@ -1,7 +1,10 @@
 import 'dart:math';
 
 import 'package:app_book/database/db_admin.dart';
+import 'package:app_book/model/model.dart';
 import 'package:flutter/material.dart';
+
+import '../widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
    
@@ -22,7 +25,8 @@ class HomeScreen extends StatelessWidget {
               height: pyth * 0.42,
               decoration: const BoxDecoration(
                 image: DecorationImage(
-                  image: NetworkImage("https://images.pexels.com/photos/14454202/pexels-photo-14454202.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
+                  image: NetworkImage("https://images.pexels.com/photos/14454202/pexels-photo-14454202.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
+                  fit: BoxFit.cover
                 )
               ),
               child: SafeArea(
@@ -76,7 +80,7 @@ class HomeScreen extends StatelessWidget {
                       child: Row(
                         children: const [
                           Text(
-                            "Guarda \ntus libros \nfavoritos.",
+                            "Save \nyou'r favorite \n books.",
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 36.0,
@@ -89,6 +93,102 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
               ),
+            ),
+            FutureBuilder(
+               future: DBAdmin().getBooks(),
+               builder: (BuildContext context, AsyncSnapshot snap){
+                if(snap.hasData){
+                  List<BookModel> myBooks = snap.data;
+                  return myBooks.isNotEmpty ? Padding(
+                    padding: const EdgeInsets.all(14.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const SizedBox(
+                          height: 8.0,
+                        ),
+                        const Text(
+                          "Mis libros favoritos",
+                          style: TextStyle(
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 16.0,
+                        ),
+                        SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          physics: const BouncingScrollPhysics(),
+                          child: Row(
+                            children: myBooks
+                                .map((mandarina) => ItemSliderWidget(
+                                      book: mandarina,
+                                    ))
+                                .toList(),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 20.0,
+                        ),
+                        const Text(
+                          "Lista general",
+                          style: TextStyle(
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 20.0,
+                        ),
+                        ListView.builder(
+                          itemCount: myBooks.length,
+                          physics: const NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          itemBuilder: (BuildContext context, int index) {
+                            return ItemHomeWidget(
+                              book: myBooks[index],
+                              onDelete: () {
+                                // showDeleteDialog(myBooks[index].id!);
+                                return null;
+                              },
+                              onUpdate: () {
+                                // booKTemp = myBooks[index];
+                                // isRegister = false;
+                                // showFormBook();
+                                return null;
+                                // print(myBooks[index].toJson());
+                              },
+                            );
+                          },
+                        ),
+                        const SizedBox(
+                          height: 40.0,
+                        ),
+                      ],
+                    ),
+                  )
+                  : Center(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 50.0),
+                      child: Column(
+                        children: [
+                          Image.asset(
+                            "assets/images/box.png",
+                            height: pyth * 0.1,
+                          ),
+                          const SizedBox(
+                            height: 8.0,
+                          ),
+                          const Text(
+                              "Por favor registra tu primer libro.")
+                        ],
+                      ),
+                    ),
+                  );
+                }
+                return CircularProgressIndicator();
+               },
             )
           ],
         ),

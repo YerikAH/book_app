@@ -174,7 +174,7 @@ class HomeScreen extends StatelessWidget {
                       child: Column(
                         children: [
                           Image.asset(
-                            "assets/images/box.png",
+                            "assets/box.png",
                             height: pyth * 0.1,
                           ),
                           const SizedBox(

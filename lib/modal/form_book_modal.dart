@@ -70,7 +70,7 @@ class _FormBookModalState extends State<FormBookModal> {
             //Se agregó el libro correctamente
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
-                backgroundColor: Color(0xff06d6a0),
+                backgroundColor: const Color(0xff06d6a0),
                 duration: const Duration(seconds: 5),
                 behavior: SnackBarBehavior.floating,
                 // padding: EdgeInsets.all(12.0),
@@ -78,7 +78,7 @@ class _FormBookModalState extends State<FormBookModal> {
                   borderRadius: BorderRadius.circular(16.0),
                 ),
                 content: Row(
-                  children: [
+                  children: const [
                     Icon(Icons.check, color: Colors.white),
                     SizedBox(
                       width: 10.0,
@@ -112,7 +112,7 @@ class _FormBookModalState extends State<FormBookModal> {
                   borderRadius: BorderRadius.circular(16.0),
                 ),
                 content: Row(
-                  children: [
+                  children: const [
                     Icon(Icons.check, color: Colors.white),
                     SizedBox(
                       width: 10.0,
@@ -157,7 +157,7 @@ class _FormBookModalState extends State<FormBookModal> {
             children: [
               Text(
                 widget.isRegister ? "Agregar libro" : "Actualizar libro",
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 20.0,
                   fontWeight: FontWeight.w700,
                 ),
@@ -205,7 +205,7 @@ class _FormBookModalState extends State<FormBookModal> {
                   ),
                   child: Text(
                     widget.isRegister ? "Agregar" : "Actualizar",
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 16.0,
                       fontWeight: FontWeight.w600,
                     ),

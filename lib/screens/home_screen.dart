@@ -282,8 +282,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             return ItemHomeWidget(
                               book: myBooks[index],
                               onDelete: () {
-                                // showDeleteDialog(myBooks[index].id!);
-                                return null;
+                                showDeleteDialog(myBooks[index].id!);
                               },
                               onUpdate: () {
                                 // booKTemp = myBooks[index];

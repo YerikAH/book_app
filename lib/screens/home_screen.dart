@@ -173,7 +173,7 @@ class _HomeScreenState extends State<HomeScreen> {
               height: pyth * 0.42,
               decoration: const BoxDecoration(
                 image: DecorationImage(
-                  image: NetworkImage("https://images.pexels.com/photos/2460817/pexels-photo-2460817.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
+                  image: AssetImage("assets/poster.jpeg"),
                   fit: BoxFit.cover
                 )
               ),
@@ -196,31 +196,38 @@ class _HomeScreenState extends State<HomeScreen> {
                           )
                         ]
                       ),
-                      child: TextField(
-                        style: const TextStyle(
-                          fontSize: 14.0,
+                      child: Theme(
+                        data:Theme.of(context).copyWith(
+                          colorScheme: ThemeData().colorScheme.copyWith(
+                          primary:AppTheme.orange,
+                          ),
                         ),
-                        decoration: InputDecoration(
-                          filled: true,
-                          fillColor:  AppTheme.white,
-                          hintText: "Search book...",
-                          hintStyle: const TextStyle(
+                        child: TextField(
+                          style: const TextStyle(
                             fontSize: 14.0,
                           ),
-                          suffixIcon: const Icon(
-                            Icons.search,
-                            size: 19.0,
-                          ),
-                          contentPadding: const EdgeInsets.symmetric(
-                            horizontal: 16.0,
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(30.0),
-                            borderSide: BorderSide.none,
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(30.0),
-                            borderSide: BorderSide.none,
+                          decoration: InputDecoration(
+                            filled: true,
+                            fillColor:  AppTheme.white,
+                            hintText: "Search book...",
+                            hintStyle: const TextStyle(
+                              fontSize: 14.0,
+                            ),
+                            suffixIcon: const Icon(
+                              Icons.search,
+                              size: 19.0,
+                            ),
+                            contentPadding: const EdgeInsets.symmetric(
+                              horizontal: 16.0,
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(30.0),
+                              borderSide: BorderSide.none,
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(30.0),
+                              borderSide: BorderSide.none,
+                            ),
                           ),
                         ),
                       ),

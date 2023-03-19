@@ -8,7 +8,7 @@ import '../widgets/widgets.dart';
 class FormBookModal extends StatefulWidget {
   BookModel? book;
   bool isRegister;
-  FormBookModal({
+  FormBookModal({super.key, 
     this.book,
     required this.isRegister,
   });
@@ -30,7 +30,6 @@ class _FormBookModalState extends State<FormBookModal> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     if (!widget.isRegister) {
       _titleController.text = widget.book!.title;
@@ -42,22 +41,6 @@ class _FormBookModalState extends State<FormBookModal> {
 
   void saveBook() {
     if (_myFormKey.currentState!.validate()) {
-      //Registrar un libro
-      // String title = _titleController.text;
-      // String author = _authorController.text;
-      // String image = _imageController.text;
-      // String description = _descriptionController.text;
-      // DBAdmin().insertBook(title, author, description, image);
-
-      // Map<String, dynamic> bookMap = {
-      //   "image": _imageController.text,
-      //   "title": _titleController.text,
-      //   "description": _descriptionController.text,
-      //   "author": _authorController.text,
-      // };
-
-      // DBAdmin().insertBook(bookMap);
-
       BookModel myBook = BookModel(
         title: _titleController.text,
         author: _authorController.text,
@@ -136,7 +119,7 @@ class _FormBookModalState extends State<FormBookModal> {
 
   @override
   Widget build(BuildContext context) {
-           print("cargar widget");
+    print("cargar widget");
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12.0),
       decoration: const BoxDecoration(
@@ -169,7 +152,7 @@ class _FormBookModalState extends State<FormBookModal> {
                 icon: Icons.rocket_launch_rounded,
                 label: "Title",
                 controller: _titleController,
-                
+
               ),
               CommonTextFieldWidget(
                 hintText: "Enter name the autor",

@@ -1,6 +1,8 @@
+import 'package:app_book/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+// ignore: must_be_immutable
 class CommonTextFieldWidget extends StatelessWidget {
   String label;
   String hintText;
@@ -9,6 +11,7 @@ class CommonTextFieldWidget extends StatelessWidget {
   TextEditingController controller;
 
   CommonTextFieldWidget({
+    super.key, 
     required this.hintText,
     required this.icon,
     required this.label,
@@ -46,12 +49,13 @@ class CommonTextFieldWidget extends StatelessWidget {
             ),
             child: TextFormField(
               controller: controller,
-              maxLines: maxLines,
+              maxLines: maxLines, 
               style: GoogleFonts.poppins(
                 color: Colors.black87,
                 fontSize: 13.0,
                 fontWeight: FontWeight.w400
               ),
+              
               decoration: InputDecoration(
                 hintText: hintText,
                 filled: true,
@@ -67,25 +71,23 @@ class CommonTextFieldWidget extends StatelessWidget {
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(16.0),
-                  borderSide: BorderSide.none,
+                  borderSide: BorderSide.none
                 ),
                 errorBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(16.0),
-                  borderSide: BorderSide.none,
+                  borderSide: BorderSide.none
                 ),
                 focusedErrorBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(16.0),
                   borderSide: BorderSide.none,
                 ),
+
+
               ),
               validator: (String? value) {
                 if (value != null && value.isEmpty) {
-                  return "Campo obligatorio";
+                  return "Obligatory field";
                 }
-                // if (value != null && value.length < 8) {
-                //   return "El campo debe de tener más de 8 caracteres";
-                // }
-
                 return null;
               },
             ),

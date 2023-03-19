@@ -20,11 +20,13 @@ class _HomeScreenState extends State<HomeScreen> {
   bool isRegister = true;
 
   showFormBook() {
+    print("function execute");
     showModalBottomSheet(
       context: context,
       backgroundColor: Colors.transparent,
       isScrollControlled: true,
       builder: (BuildContext context) {
+        print("build widget");
         return Padding(
           padding: MediaQuery.of(context).viewInsets,
           child: FormBookModal(
@@ -279,11 +281,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                 showDeleteDialog(myBooks[index].id!);
                               },
                               onUpdate: () {
-                                // booKTemp = myBooks[index];
-                                // isRegister = false;
-                                // showFormBook();
-                                return null;
-                                // print(myBooks[index].toJson());
+                                booKTemp = myBooks[index];
+                                isRegister = false;
+                                print("click");
+                                showFormBook();
                               },
                             );
                           },

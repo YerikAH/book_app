@@ -68,13 +68,11 @@ class _FormBookModalState extends State<FormBookModal> {
       if (widget.isRegister) {
         DBAdmin().insertBook(myBook).then((mandarina) {
           if (mandarina >= 0) {
-            //Se agregó el libro correctamente
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 backgroundColor: const Color(0xff06d6a0),
                 duration: const Duration(seconds: 5),
                 behavior: SnackBarBehavior.floating,
-                // padding: EdgeInsets.all(12.0),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16.0),
                 ),
@@ -86,7 +84,7 @@ class _FormBookModalState extends State<FormBookModal> {
                     ),
                     Expanded(
                       child: Text(
-                        "El libro se registró correctamente.",
+                        "The book registers successfully.",
                       ),
                     ),
                   ],
@@ -102,13 +100,11 @@ class _FormBookModalState extends State<FormBookModal> {
         myBook.id = widget.book!.id;
         DBAdmin().updateBook(myBook).then((mandarina) {
           if (mandarina >= 0) {
-            //Se agregó el libro correctamente
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 backgroundColor: const Color(0xff06d6a0),
                 duration: const Duration(seconds: 5),
                 behavior: SnackBarBehavior.floating,
-                // padding: EdgeInsets.all(12.0),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16.0),
                 ),
@@ -120,7 +116,7 @@ class _FormBookModalState extends State<FormBookModal> {
                     ),
                     Expanded(
                       child: Text(
-                        "El libro se actualizó correctamente.",
+                        "The book update successfully",
                       ),
                     ),
                   ],
@@ -140,6 +136,7 @@ class _FormBookModalState extends State<FormBookModal> {
 
   @override
   Widget build(BuildContext context) {
+           print("cargar widget");
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12.0),
       decoration: const BoxDecoration(
@@ -172,6 +169,7 @@ class _FormBookModalState extends State<FormBookModal> {
                 icon: Icons.rocket_launch_rounded,
                 label: "Title",
                 controller: _titleController,
+                
               ),
               CommonTextFieldWidget(
                 hintText: "Enter name the autor",

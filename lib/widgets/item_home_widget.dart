@@ -1,14 +1,16 @@
 import 'dart:math';
 import 'package:app_book/model/model.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 
+// ignore: must_be_immutable
 class ItemHomeWidget extends StatelessWidget {
   BookModel book;
   Function onDelete;
   Function onUpdate;
 
-  ItemHomeWidget({
+  ItemHomeWidget({super.key, 
     required this.book,
     required this.onDelete,
     required this.onUpdate,
@@ -27,11 +29,11 @@ class ItemHomeWidget extends StatelessWidget {
           child: Row(
             children: [
               ClipRRect(
-                borderRadius: BorderRadius.circular(12.0),
+                borderRadius: BorderRadius.circular(24.0),
                 child: Image.network(
                   book.image,
-                  width: pyth * 0.12,
-                  height: pyth * 0.16,
+                  width: pyth * 0.10,
+                  height: pyth * 0.14,
                   fit: BoxFit.cover,
                 ),
               ),
@@ -45,14 +47,14 @@ class ItemHomeWidget extends StatelessWidget {
                     Text(
                       book.title,
                       style: const TextStyle(
-                        fontSize: 20.0,
+                        fontSize: 16.0,
                         fontWeight: FontWeight.w700,
                       ),
                     ),
                     Text(
                       book.author,
                       style: const TextStyle(
-                        fontSize: 16.0,
+                        fontSize: 14.0,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -64,7 +66,7 @@ class ItemHomeWidget extends StatelessWidget {
                       maxLines: 3,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
-                        fontSize: 14.0,
+                        fontSize: 12.0,
                         fontWeight: FontWeight.w500,
                         color: Colors.black.withOpacity(0.65),
                       ),
@@ -94,27 +96,40 @@ class ItemHomeWidget extends StatelessWidget {
                 PopupMenuItem(
                   value: 1,
                   child: Row(
-                    children: const [
-                      Icon(Icons.edit, size: 16.0),
-                      SizedBox(
-                        width: 4.0,
+                    children: [
+                      Icon(Icons.edit, size: 16.0, color: Colors.black.withOpacity(0.7),),
+                      const SizedBox(
+                        width: 10.0,
                       ),
-                      Text("Actualizar"),
+                      Text(
+                        "Update",
+                        style: GoogleFonts.poppins(
+                          fontSize: 14.0,
+                          color: Colors.black.withOpacity(0.7),
+                          fontWeight: FontWeight.w600
+                        ),
+                      ),
                     ],
                   ),
-                  // onTap: () {
-                  //   onUpdate();
-                  // },
+                  onTap: () {
+                    onUpdate();
+                  },
                 ),
                 PopupMenuItem(
                   value: 2,
                   child: Row(
-                    children: const [
-                      Icon(Icons.delete_outline_rounded, size: 16.0),
-                      SizedBox(
-                        width: 4.0,
+                    children: [
+                      Icon(Icons.delete_outline_rounded, size: 16.0, color: Colors.black.withOpacity(0.7),),
+                      const SizedBox(
+                        width: 10.0,
                       ),
-                      Text("Eliminar"),
+                      Text("Delete",
+                        style: GoogleFonts.poppins(
+                          fontSize: 14.0,
+                          color: Colors.black.withOpacity(0.7),
+                          fontWeight: FontWeight.w600
+                        ),
+                      ),
                     ],
                   ),
                 ),

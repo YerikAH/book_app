@@ -30,7 +30,7 @@ class CommonTextFieldWidget extends StatelessWidget {
             " $label:",
             style: GoogleFonts.poppins(
               fontSize: 14.0,
-              color: Colors.black,
+              color: AppTheme.black100,
               fontWeight: FontWeight.w500
             ),
           ),
@@ -41,7 +41,7 @@ class CommonTextFieldWidget extends StatelessWidget {
             decoration: BoxDecoration(
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.07),
+                  color: AppTheme.black10,
                   blurRadius: 12,
                   offset: const Offset(4, 4),
                 ),
@@ -57,7 +57,7 @@ class CommonTextFieldWidget extends StatelessWidget {
                 controller: controller,
                 maxLines: maxLines, 
                 style: GoogleFonts.poppins(
-                  color: Colors.black87,
+                  color: AppTheme.black70,
                   fontSize: 13.0,
                   fontWeight: FontWeight.w400
                 ),
@@ -65,7 +65,7 @@ class CommonTextFieldWidget extends StatelessWidget {
                 decoration: InputDecoration(
                   hintText: hintText,
                   filled: true,
-                  fillColor: Colors.white,
+                  fillColor: AppTheme.white,
                   prefixIcon: Icon(icon),
                   contentPadding: const EdgeInsets.symmetric(
                     horizontal: 14,
@@ -87,8 +87,6 @@ class CommonTextFieldWidget extends StatelessWidget {
                     borderRadius: BorderRadius.circular(16.0),
                     borderSide: BorderSide.none,
                   ),
-            
-            
                 ),
                 validator: (String? value) {
                   if (value != null && value.isEmpty) {

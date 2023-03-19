@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:app_book/model/model.dart';
+import 'package:app_book/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -67,7 +68,7 @@ class ItemHomeWidget extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 12.0,
                         fontWeight: FontWeight.w500,
-                        color: Colors.black.withOpacity(0.65),
+                        color: AppTheme.black60,
                       ),
                     ),
                   ],
@@ -96,7 +97,7 @@ class ItemHomeWidget extends StatelessWidget {
                   value: 1,
                   child: Row(
                     children: [
-                      Icon(Icons.edit, size: 16.0, color: Colors.black.withOpacity(0.7),),
+                      Icon(Icons.edit, size: 16.0, color:AppTheme.black70,),
                       const SizedBox(
                         width: 10.0,
                       ),
@@ -104,7 +105,7 @@ class ItemHomeWidget extends StatelessWidget {
                         "Update",
                         style: GoogleFonts.poppins(
                           fontSize: 14.0,
-                          color: Colors.black.withOpacity(0.7),
+                          color: AppTheme.black70,
                           fontWeight: FontWeight.w600
                         ),
                       ),
@@ -115,14 +116,14 @@ class ItemHomeWidget extends StatelessWidget {
                   value: 2,
                   child: Row(
                     children: [
-                      Icon(Icons.delete_outline_rounded, size: 16.0, color: Colors.black.withOpacity(0.7),),
+                      Icon(Icons.delete_outline_rounded, size: 16.0, color: AppTheme.black70),
                       const SizedBox(
                         width: 10.0,
                       ),
                       Text("Delete",
                         style: GoogleFonts.poppins(
                           fontSize: 14.0,
-                          color: Colors.black.withOpacity(0.7),
+                          color: AppTheme.black70,
                           fontWeight: FontWeight.w600
                         ),
                       ),

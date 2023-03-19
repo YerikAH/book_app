@@ -112,7 +112,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: AppTheme.orange,
-                        foregroundColor: Colors.white,
+                        foregroundColor:  AppTheme.white,
                         textStyle: const TextStyle(
                           fontSize: 14.0,
                           fontWeight: FontWeight.w400,
@@ -153,12 +153,12 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
           decoration: BoxDecoration(
-            color: const Color.fromARGB(179, 255, 80, 27),
+            color:  AppTheme.orange,
             borderRadius: BorderRadius.circular(255.0),
           ),
           child: const Icon(
             Icons.add_rounded,
-            color: Colors.white,
+            color:  AppTheme.white,
             size: 30.0,
             
           ),
@@ -190,7 +190,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       decoration: BoxDecoration(
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.black.withOpacity(0.2),
+                            color:  AppTheme.black10,
                             blurRadius: 14.0,
                             offset: const Offset(4, 4)
                           )
@@ -202,7 +202,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         decoration: InputDecoration(
                           filled: true,
-                          fillColor: Colors.white,
+                          fillColor:  AppTheme.white,
                           hintText: "Search book...",
                           hintStyle: const TextStyle(
                             fontSize: 14.0,
@@ -234,7 +234,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             style: GoogleFonts.poppins(
                               fontSize: 32.0,
                               fontWeight: FontWeight.w700,
-                              color: Colors.white
+                              color:  AppTheme.white
                             )
                           ),
                         ],
@@ -325,7 +325,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             padding: const EdgeInsets.all(15.0),
                             height: pyth * 0.1,
                             decoration: BoxDecoration(
-                              color: const Color.fromARGB(179, 255, 80, 27),
+                              color:  AppTheme.orange,
                               borderRadius: BorderRadius.circular(255.0)
                             ),
                             child: Center(
@@ -346,7 +346,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             textAlign: TextAlign.center,
                             style: GoogleFonts.poppins(
                               fontSize: 16.0,
-                              color: const Color.fromARGB(179, 255, 80, 27),
+                              color: AppTheme.orange,
                               fontWeight: FontWeight.w500,
                             ),
                           )

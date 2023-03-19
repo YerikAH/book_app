@@ -1,4 +1,5 @@
 import 'package:app_book/database/db_admin.dart';
+import 'package:app_book/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../model/model.dart';
@@ -53,7 +54,7 @@ class _FormBookModalState extends State<FormBookModal> {
           if (mandarina >= 0) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
-                backgroundColor: const Color(0xff06d6a0),
+                backgroundColor: AppTheme.green,
                 duration: const Duration(seconds: 5),
                 behavior: SnackBarBehavior.floating,
                 shape: RoundedRectangleBorder(
@@ -61,7 +62,7 @@ class _FormBookModalState extends State<FormBookModal> {
                 ),
                 content: Row(
                   children: const [
-                    Icon(Icons.check, color: Colors.white),
+                    Icon(Icons.check, color: AppTheme.white),
                     SizedBox(
                       width: 10.0,
                     ),
@@ -85,7 +86,7 @@ class _FormBookModalState extends State<FormBookModal> {
           if (mandarina >= 0) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
-                backgroundColor: const Color(0xff06d6a0),
+                backgroundColor: AppTheme.green,
                 duration: const Duration(seconds: 5),
                 behavior: SnackBarBehavior.floating,
                 shape: RoundedRectangleBorder(
@@ -93,7 +94,7 @@ class _FormBookModalState extends State<FormBookModal> {
                 ),
                 content: Row(
                   children: const [
-                    Icon(Icons.check, color: Colors.white),
+                    Icon(Icons.check, color: AppTheme.white),
                     SizedBox(
                       width: 10.0,
                     ),
@@ -120,7 +121,7 @@ class _FormBookModalState extends State<FormBookModal> {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12.0),
       decoration: const BoxDecoration(
-        color: Colors.white,
+        color: AppTheme.white,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(36.0),
           topRight: Radius.circular(36.0),
@@ -181,7 +182,7 @@ class _FormBookModalState extends State<FormBookModal> {
                     saveBook();
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color.fromARGB(179, 255, 80, 27),
+                    backgroundColor: AppTheme.orange,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(14.0),
                     ),
@@ -191,7 +192,7 @@ class _FormBookModalState extends State<FormBookModal> {
                     style: GoogleFonts.poppins(
                       fontSize: 16.0,
                       fontWeight: FontWeight.w600,
-                      color: Colors.white
+                      color: AppTheme.white
                     ),
                   ),
                 ),

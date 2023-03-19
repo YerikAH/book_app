@@ -47,49 +47,56 @@ class CommonTextFieldWidget extends StatelessWidget {
                 ),
               ],
             ),
-            child: TextFormField(
-              controller: controller,
-              maxLines: maxLines, 
-              style: GoogleFonts.poppins(
-                color: Colors.black87,
-                fontSize: 13.0,
-                fontWeight: FontWeight.w400
+            child: Theme(
+              data:Theme.of(context).copyWith(
+                colorScheme: ThemeData().colorScheme.copyWith(
+                primary:AppTheme.orange,
+                ),
               ),
-              
-              decoration: InputDecoration(
-                hintText: hintText,
-                filled: true,
-                fillColor: Colors.white,
-                prefixIcon: Icon(icon),
-                contentPadding: const EdgeInsets.symmetric(
-                  horizontal: 14,
-                  vertical: 12,
+              child: TextFormField(
+                controller: controller,
+                maxLines: maxLines, 
+                style: GoogleFonts.poppins(
+                  color: Colors.black87,
+                  fontSize: 13.0,
+                  fontWeight: FontWeight.w400
                 ),
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(16.0),
-                  borderSide: BorderSide.none,
+                
+                decoration: InputDecoration(
+                  hintText: hintText,
+                  filled: true,
+                  fillColor: Colors.white,
+                  prefixIcon: Icon(icon),
+                  contentPadding: const EdgeInsets.symmetric(
+                    horizontal: 14,
+                    vertical: 12,
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(16.0),
+                    borderSide: BorderSide.none,
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(16.0),
+                    borderSide: BorderSide.none
+                  ),
+                  errorBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(16.0),
+                    borderSide: BorderSide.none
+                  ),
+                  focusedErrorBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(16.0),
+                    borderSide: BorderSide.none,
+                  ),
+            
+            
                 ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(16.0),
-                  borderSide: BorderSide.none
-                ),
-                errorBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(16.0),
-                  borderSide: BorderSide.none
-                ),
-                focusedErrorBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(16.0),
-                  borderSide: BorderSide.none,
-                ),
-
-
+                validator: (String? value) {
+                  if (value != null && value.isEmpty) {
+                    return "Obligatory field";
+                  }
+                  return null;
+                },
               ),
-              validator: (String? value) {
-                if (value != null && value.isEmpty) {
-                  return "Obligatory field";
-                }
-                return null;
-              },
             ),
           ),
         ],

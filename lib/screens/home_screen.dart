@@ -285,6 +285,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 isRegister = false;
                                 print("click");
                                 showFormBook();
+                                setState(() {});
                               },
                             );
                           },

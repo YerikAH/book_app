@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../modal/modal.dart';
+import '../theme/app_theme.dart';
 import '../widgets/widgets.dart';
 
 class HomeScreen extends StatefulWidget { 
@@ -51,11 +52,27 @@ class _HomeScreenState extends State<HomeScreen> {
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Text("Attention"),
+              const SizedBox(
+                height: 10.0,
+              ),
+              Text("Attention",
+                style: GoogleFonts.poppins(
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.w600,
+                  color: AppTheme.black100
+                ),
+              ),
               const SizedBox(
                 height: 8.0,
               ),
-              const Text("Do you want to delete this book?"),
+              Text("Do you want to delete this book?",
+                textAlign: TextAlign.center,
+                style: GoogleFonts.poppins(
+                  fontSize: 14.0,
+                  fontWeight: FontWeight.w400,
+                  color: AppTheme.black70,
+                ),
+              ),
               const SizedBox(
                 height: 12.0,
               ),
@@ -69,7 +86,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: const Text(
                         "Cancel",
                         style: TextStyle(
-                          color: Colors.black54,
+                          color: AppTheme.orange,
+                          fontSize: 14.0,
+                          fontWeight: FontWeight.w400,
                         ),
                       ),
                     ),
@@ -96,7 +115,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         });
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xff22223b),
+                        backgroundColor: AppTheme.orange,
+                        foregroundColor: Colors.white,
+                        textStyle: TextStyle(
+                          fontSize: 14.0,
+                          fontWeight: FontWeight.w400,
+                        ),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(14.0),
                         ),
@@ -283,9 +307,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               onUpdate: () {
                                 booKTemp = myBooks[index];
                                 isRegister = false;
-                                print("click");
                                 showFormBook();
-                                setState(() {});
                               },
                             );
                           },

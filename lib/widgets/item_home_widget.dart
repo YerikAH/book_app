@@ -3,8 +3,6 @@ import 'package:app_book/model/model.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
-// ignore: must_be_immutable
 class ItemHomeWidget extends StatelessWidget {
   BookModel book;
   Function onDelete;
@@ -111,9 +109,6 @@ class ItemHomeWidget extends StatelessWidget {
                       ),
                     ],
                   ),
-                  onTap: () {
-                    onUpdate();
-                  },
                 ),
                 PopupMenuItem(
                   value: 2,

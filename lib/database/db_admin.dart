@@ -5,10 +5,6 @@ import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 
 class DBAdmin{
-    // Con directory.path, capturamos el cirectorio de nuestra aplicación.
-    // Con join, unimos path, en este caso creamos un archivo DBBooks.db
-    // Ya no es necesario poner CREATE DATABASE, ya que se crea cuando creamos el archivo
-    // openDataBase, es para abrir nuestra base de datos, recibe el path, la versión de nuestra base de datos, y onCreate, se ejecuta cuando se crea una nueva base de datos. En esta función se pueden crear las tablas y establecer los índices necesarios para la base de datos.
   Database? _myDatabase;
 
   // Singleton

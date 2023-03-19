@@ -3,9 +3,10 @@ import 'package:app_book/model/model.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+// ignore: must_be_immutable
 class ItemSliderWidget extends StatelessWidget {
   BookModel book;
-  ItemSliderWidget({required this.book});
+  ItemSliderWidget({super.key, required this.book});
 
   Map<int, Color> colors = const {
     1: Color(0xffF8BACF),
@@ -27,7 +28,6 @@ class ItemSliderWidget extends StatelessWidget {
     double pyth = sqrt(pow(height, 2) + pow(width, 2));
 
     int index = Random().nextInt(10) + 1;
-
     return Container(
       width: pyth * 0.25,
       margin: EdgeInsets.only(right: 16.0, top: pyth * 0.042),

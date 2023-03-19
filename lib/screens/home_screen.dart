@@ -1,10 +1,8 @@
 import 'dart:math';
-
 import 'package:app_book/database/db_admin.dart';
 import 'package:app_book/model/model.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../modal/modal.dart';
 import '../theme/app_theme.dart';
 import '../widgets/widgets.dart';
@@ -21,13 +19,11 @@ class _HomeScreenState extends State<HomeScreen> {
   bool isRegister = true;
 
   showFormBook() {
-    print("function execute");
     showModalBottomSheet(
       context: context,
       backgroundColor: Colors.transparent,
       isScrollControlled: true,
       builder: (BuildContext context) {
-        print("build widget");
         return Padding(
           padding: MediaQuery.of(context).viewInsets,
           child: FormBookModal(
@@ -117,7 +113,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: AppTheme.orange,
                         foregroundColor: Colors.white,
-                        textStyle: TextStyle(
+                        textStyle: const TextStyle(
                           fontSize: 14.0,
                           fontWeight: FontWeight.w400,
                         ),

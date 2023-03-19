@@ -1,10 +1,10 @@
 import 'package:app_book/database/db_admin.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../model/model.dart';
 import '../widgets/widgets.dart';
 
+// ignore: must_be_immutable
 class FormBookModal extends StatefulWidget {
   BookModel? book;
   bool isRegister;
@@ -75,9 +75,9 @@ class _FormBookModalState extends State<FormBookModal> {
               ),
             );
             Navigator.pop(context);
-          } else {}
+          } 
         }).catchError((error) {
-          print(error);
+          // error
         });
       } else {
         myBook.id = widget.book!.id;
@@ -107,19 +107,16 @@ class _FormBookModalState extends State<FormBookModal> {
               ),
             );
             Navigator.pop(context);
-          } else {}
+          }
         }).catchError((error) {
-          print(error);
+          // error
         });
-        //Actualizar un libro...
-
       }
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    print("cargar widget");
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12.0),
       decoration: const BoxDecoration(

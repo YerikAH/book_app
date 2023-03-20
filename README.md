@@ -28,7 +28,6 @@ In the `assets` folder are all the files used by the application.
 - [sqflite](https://pub.dev/packages/sqflite)
 - [path](https://pub.dev/packages/path)
 - [path_provider](https://pub.dev/packages/path_provider)
-- [url_launcher](https://pub.dev/packages/url_launcher)
 
 
 ## Demo 

@@ -40,8 +40,8 @@ flutter run
 If you want to try the application on android you can see [releases](https://github.com/YerikAH/read-and-save-qr/releases/tag/app), and download the apk, it weighs 19MB.
 
 ### Screenshots
-<img src="./screenshots/ss-2.png" width="375" />
 <img src="./screenshots/ss-1.png" width="375" />
+<img src="./screenshots/ss-2.png" width="375" />
 <img src="./screenshots/ss-3.png" width="375" />
 <img src="./screenshots/ss-4.png" width="375" />
 

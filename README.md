@@ -1,5 +1,5 @@
 # App book
-A mobile application to scan QR codes, save them, enter the QR link. 
+
 
 ## Development 
 
@@ -37,7 +37,7 @@ git clone https://github.com/YerikAH/book_app.git
 cd book_app
 flutter run
 ```
-If you want to try the application on android you can see [releases](https://github.com/YerikAH/read-and-save-qr/releases/tag/app), and download the apk, it weighs 19MB.
+If you want to try the application on android you can see [releases](https://github.com/YerikAH/book_app/releases/tag/book_app), and download the apk, it weighs 19MB.
 
 ### Screenshots
 <img src="./screenshots/ss-1.png" width="375" />

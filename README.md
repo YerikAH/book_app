@@ -1,5 +1,5 @@
 # App book
-
+Application to save books, or simulate a bookstore, developed with Flutter, it has a database. 
 
 ## Development 
 
@@ -16,6 +16,8 @@ In the `assets` folder are all the files used by the application.
 
 
 ### My experience developing
+
+ - This mobile application for Android has been developed using Flutter, a technology that allows you to create applications quickly and efficiently. The development experience was very smooth and easy, allowing me to create a CRUD with SQLite efficiently. Even though it's a relatively simple app, I'm proud of the end result and think it shows Flutter's potential as a platform for developing high-quality, modern mobile apps.
 
 ### Technologies used in the project
 
